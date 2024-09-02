@@ -1,0 +1,4 @@
+INSERT INTO tarefa (titulo, descricao, responsavel, prioridade, deadLine) VALUES ('000Implementar sistema de login', 'Desenvolver a funcionalidade de login para usuários', 'João', 'ALTA', '2024-09-10');
+INSERT INTO tarefa (titulo, descricao, responsavel, prioridade, deadLine) VALUES ('Atualizar página inicial', 'Modificar o design da página inicial para refletir a nova identidade visual', 'Maria', 'MEDIA', '2024-09-15');
+INSERT INTO tarefa (titulo, descricao, responsavel, prioridade, deadLine) VALUES ('Documentar API', 'Escrever a documentação completa da API REST para novos desenvolvedores', 'Ana', 'BAIXA', '2024-09-30');
+INSERT INTO tarefa (titulo, descricao, responsavel, prioridade, deadLine) VALUES ('Implementar testes unitários', 'Criar testes unitários para o módulo de pagamentos', 'Pedro', 'MEDIA', '2024-09-12');

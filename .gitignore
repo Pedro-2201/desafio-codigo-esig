@@ -36,3 +36,6 @@ build/
 
 ### Mac OS ###
 .DS_Store
+/.idea/webContexts.xml
+/.idea/dataSources.xml
+/.idea/sqldialects.xml
