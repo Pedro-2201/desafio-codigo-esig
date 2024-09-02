@@ -29,9 +29,9 @@ public class TarefaController implements Serializable {
     public String salvarTarefa() {
         em.getTransaction().begin();
         if (tarefa.getId() == null) {
-            em.persist(tarefa); // Adiciona nova tarefa
+            em.persist(tarefa); 
         } else {
-            em.merge(tarefa); // Atualiza tarefa existente
+            em.merge(tarefa); 
         }
         em.getTransaction().commit();
         FacesContext.getCurrentInstance().addMessage(null, new FacesMessage("Tarefa salva com sucesso!"));
@@ -70,8 +70,8 @@ public class TarefaController implements Serializable {
     }
 
     public String editarTarefa(Long id) {
-        tarefa = em.find(Tarefa.class, id); // Busca a tarefa a ser editada pelo ID
-        return "cadastrarTarefa.xhtml?faces-redirect=true"; // Redireciona para a página de cadastro/edição
+        tarefa = em.find(Tarefa.class, id);
+        return "cadastrarTarefa.xhtml?faces-redirect=true"; 
     }
 
     public Tarefa getTarefa() {
