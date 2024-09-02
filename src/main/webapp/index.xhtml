@@ -8,57 +8,57 @@
 <h:head>
     <title>Gerenciador de Tarefas</title>
     <style>
-        h1, h2{
+        h1, h2 {
             text-align: center;
         }
     </style>
 </h:head>
 <h:body>
-        <h:form>
-            <p:panelGrid columns="2">
-                <f:facet name="header">
-                    <h2>Gerenciador de tarefas</h2>
-                    Tarefas pendentes
-                </f:facet>
-                <p:dataTable id="tabelaTarefas" value="#{tarefaController.listarTarefasPendentes()}" var="tarefa">
-                    <p:column>
-                        <f:facet name="header">Título</f:facet>
-                        #{tarefa.titulo}
-                    </p:column>
-                    <p:column>
-                        <f:facet name="header">Descrição</f:facet>
-                        #{tarefa.descricao}
-                    </p:column>
-                    <p:column>
-                        <f:facet name="header">Prioridade</f:facet>
-                        #{tarefa.prioridade}
-                    </p:column>
-                    <p:column>
-                        <f:facet name="header">Responsável</f:facet>
-                        #{tarefa.responsavel}
-                    </p:column>
-                    <p:column>
-                        <f:facet name="header">Deadline</f:facet>
-                        #{tarefa.deadLine}
-                    </p:column>
-                    <p:column>
-                        <f:facet name="header">Ações</f:facet>
-                        <h:commandButton value="Excluir"
-                                         action="#{tarefaController.excluirTarefa(tarefa.id)}"
-                                         update="tabelaTarefas"
-                        />
-                        <h:commandButton value="Concluir"
-                                         action="#{tarefaController.concluirTarefa(tarefa.id)}"
-                                         update="tabelaTarefas"
-                        />
-                    </p:column>
-                </p:dataTable>
-                <f:facet name="footer">
-                    <p:button value="Cadastrar uma nova tarefa" outcome="cadastrarTarefa.xhtml"/>
-                    <p:button value="Listar todas as tarefas" outcome="listaTodasTarefas.xhtml"/>
-                </f:facet>
-            </p:panelGrid>
-        </h:form>
-        <h:messages/>
+    <h:form>
+        <p:panelGrid columns="2">
+            <f:facet name="header">
+                <h2>Gerenciador de tarefas</h2>
+                Tarefas pendentes
+            </f:facet>
+            <p:dataTable id="tabelaTarefas" value="#{tarefaController.listarTarefasPendentes()}" var="tarefa">
+                <p:column>
+                    <f:facet name="header">Título</f:facet>
+                    #{tarefa.titulo}
+                </p:column>
+                <p:column>
+                    <f:facet name="header">Descrição</f:facet>
+                    #{tarefa.descricao}
+                </p:column>
+                <p:column>
+                    <f:facet name="header">Prioridade</f:facet>
+                    #{tarefa.prioridade}
+                </p:column>
+                <p:column>
+                    <f:facet name="header">Responsável</f:facet>
+                    #{tarefa.responsavel}
+                </p:column>
+                <p:column>
+                    <f:facet name="header">Deadline</f:facet>
+                    #{tarefa.deadLine}
+                </p:column>
+                <p:column>
+                    <f:facet name="header">Ações</f:facet>
+                    <h:commandButton value="Excluir"
+                                     action="#{tarefaController.excluirTarefa(tarefa.id)}"
+                                     update="tabelaTarefas"
+                    />
+                    <h:commandButton value="Concluir"
+                                     action="#{tarefaController.concluirTarefa(tarefa.id)}"
+                                     update="tabelaTarefas"
+                    />
+                </p:column>
+            </p:dataTable>
+            <f:facet name="footer">
+                <p:button value="Cadastrar uma nova tarefa" outcome="cadastrarTarefa.xhtml"/>
+                <p:button value="Listar todas as tarefas" outcome="listaTodasTarefas.xhtml"/>
+            </f:facet>
+        </p:panelGrid>
+    </h:form>
+    <h:messages/>
 </h:body>
 </html>

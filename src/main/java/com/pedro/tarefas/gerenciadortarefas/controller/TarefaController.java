@@ -26,7 +26,7 @@ public class TarefaController implements Serializable {
 
     private Tarefa tarefa = new Tarefa();
 
-    public String salvarTarefa () {
+    public String salvarTarefa() {
         em.getTransaction().begin();
         if (tarefa.getId() == null) {
             em.persist(tarefa); // Adiciona nova tarefa
@@ -39,7 +39,7 @@ public class TarefaController implements Serializable {
         return "index?faces-redirect=true";
     }
 
-    public void excluirTarefa(Long id){
+    public void excluirTarefa(Long id) {
         em.getTransaction().begin();
         Tarefa tarefaParaExcluir = em.find(Tarefa.class, id);
         if (tarefaParaExcluir != null) {
@@ -48,7 +48,7 @@ public class TarefaController implements Serializable {
         em.getTransaction().commit();
     }
 
-    public void concluirTarefa(Long id){
+    public void concluirTarefa(Long id) {
         em.getTransaction().begin();
         Tarefa tarefaParaConcluir = em.find(Tarefa.class, id);
         if (tarefaParaConcluir != null) {
@@ -58,12 +58,12 @@ public class TarefaController implements Serializable {
         FacesContext.getCurrentInstance().addMessage(null, new FacesMessage("Tarefa concluida!"));
     }
 
-    public List<Tarefa> listarTarefas(){
+    public List<Tarefa> listarTarefas() {
         TypedQuery<Tarefa> query = em.createQuery("SELECT t from Tarefa t", Tarefa.class);
         return query.getResultList();
     }
 
-    public List<Tarefa> listarTarefasPendentes(){
+    public List<Tarefa> listarTarefasPendentes() {
         TypedQuery<Tarefa> query = em.createQuery("SELECT t from Tarefa t", Tarefa.class);
         return query.getResultList().stream().filter(t -> t.getStatus()
                 .equals(Status.PENDENTE)).collect(Collectors.toList());
